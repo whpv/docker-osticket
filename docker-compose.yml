@@ -1,0 +1,21 @@
+version: '2'
+services :
+  osticket :
+    build : .
+    ports :
+      - 80:80
+    links:
+      - db
+    environment:
+      OSTICKET_VERSION : 1.9.14
+    #volumes:
+      #- "${PWD}/ost-config.php:/var/www/localhost/htdocs/include/ost-sampleconfig.php"
+  db:
+    image: mariadb:10.0.28
+    environment:
+      MYSQL_ROOT_PASSWORD: PASSWORD
+      MYSQL_USER: osticket
+      MYSQL_PASSWORD: PASSWORD
+      MYSQL_DATABASE: osticket
+    ports:
+      - 3306:3306
