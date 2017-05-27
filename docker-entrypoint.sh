@@ -17,7 +17,7 @@ wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/pt_BR.phar http://osti
 wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/it.phar http://osticket.com/sites/default/files/download/lang/it.phar
 wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/es_ES.phar http://osticket.com/sites/default/files/download/lang/es_ES.phar
 wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/de.phar http://osticket.com/sites/default/files/download/lang/de.phar
-
+wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/zh_CN.phar http://osticket.com/sites/default/files/download/lang/zh_CN.phar
 
 
 echo "Configure php"
@@ -30,7 +30,7 @@ sed -i "s|;*cgi.fix_pathinfo=.*|cgi.fix_pathinfo= 0|i" /etc/php5/php.ini
 
 echo "Clean..."
 mv /var/www/localhost/htdocs/upload/* /var/www/localhost/htdocs/
-rm /var/www/localhost/htdocs/upload
+rm -Rf /var/www/localhost/htdocs/upload
 rm /var/www/localhost/htdocs/index.html
 rm -v /osTicket.zip
 chmod -R 755 /var/www/localhost/htdocs/*
